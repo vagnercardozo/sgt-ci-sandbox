@@ -3,7 +3,9 @@
     "description": "Sandbox para testar configurações de CI/CD no GitHub.",
     "type": "project",
     "require-dev": {
-        "pestphp/pest": "^3.0"
+        "pestphp/pest": "^3.0",
+        "captainhook/captainhook": "^5.29",
+        "captainhook/plugin-composer": "^5.3"
     },
     "autoload-dev": {
         "psr-4": {
@@ -14,7 +16,8 @@
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
-            "pestphp/pest-plugin": true
+            "pestphp/pest-plugin": true,
+            "captainhook/plugin-composer": true
         }
     },
     "scripts": {
