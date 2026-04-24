@@ -1,0 +1,23 @@
+{
+    "name": "vagnercardozo/sgt-ci-sandbox",
+    "description": "Sandbox para testar configurações de CI/CD no GitHub.",
+    "type": "project",
+    "require-dev": {
+        "pestphp/pest": "^3.0"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "scripts": {
+        "test": "pest"
+    }
+}

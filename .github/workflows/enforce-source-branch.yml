@@ -1,0 +1,23 @@
+name: Enforce source branch
+
+on:
+  pull_request:
+    branches: [staging, production]
+
+jobs:
+  enforce:
+    name: Source branch must be develop
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate head branch
+        env:
+          BASE: ${{ github.base_ref }}
+          HEAD: ${{ github.head_ref }}
+        run: |
+          echo "Base: $BASE"
+          echo "Head: $HEAD"
+          if [ "$HEAD" != "develop" ]; then
+            echo "::error::PRs para '$BASE' só podem vir da branch 'develop' (recebido: '$HEAD')."
+            exit 1
+          fi
+          echo "OK — PR de develop para $BASE."
